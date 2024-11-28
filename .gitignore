@@ -1,0 +1,8 @@
+# Diretório de ambiente virtual
+.venv/
+venv/
+
+# Arquivos de cache do Python
+__pycache__/
+*.py[cod]
+
