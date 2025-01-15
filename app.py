@@ -1,4 +1,5 @@
 from flask import Flask
+from flask_migrate import Migrate
 from config import Config
 from src.models import db
 from src.routes.produtores import routes_blueprint
@@ -9,6 +10,10 @@ def create_app(config_class=Config):
 
     # Inicializar banco de dados
     db.init_app(app)
+
+
+    migrate = Migrate(app, db)
+
 
     # Registrar blueprints
     app.register_blueprint(routes_blueprint)
